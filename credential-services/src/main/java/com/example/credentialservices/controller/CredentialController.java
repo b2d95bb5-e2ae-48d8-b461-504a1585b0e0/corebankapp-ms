@@ -2,20 +2,23 @@ package com.example.credentialservices.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import com.example.credentialservices.entity.Credential;
 import com.example.credentialservices.repository.CredentialRepository;
+
+import org.apache.commons.lang3.StringUtils;
 
 //import com.nexmo.client.NexmoClientException;
 //import com.nexmo.client.sms.SmsSubmissionResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -65,6 +68,16 @@ public class CredentialController {
       return null;
     }
   }
+
+  @RequestMapping(path = "/", method = RequestMethod.GET)
+  public List<Credential> getCredential(@RequestParam(name = "code", required = false) String code){
+    if(StringUtils.isNotEmpty(code)){
+      return credentialRepository.findByHashcode(code);
+    }
+    
+    return (List<Credential>) credentialRepository.findAll();
+  }
+
 
   // @GetMapping("/auth/authState")
   // public @ResponseBody int authenticateUser(@RequestParam(name = "code") String hashcode)
