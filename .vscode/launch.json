@@ -12,12 +12,12 @@
     },
     {
       "type": "java",
-      "name": "Spring Boot-CredentialServiceApplication<credential-services>",
+      "name": "Spring Boot-CredentialServices<credentialservices>",
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "console": "internalConsole",
-      "mainClass": "com.example.credentialservices.CredentialServiceApplication",
-      "projectName": "credential-services",
+      "mainClass": "com.example.credentialservices.CredentialServices",
+      "projectName": "credentialservices",
       "args": ""
     }
   ]

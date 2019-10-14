@@ -69,7 +69,7 @@ public class CredentialController {
     }
   }
 
-  @RequestMapping(path = "/", method = RequestMethod.GET)
+  @RequestMapping(path = "/cred", method = RequestMethod.GET)
   public List<Credential> getCredential(@RequestParam(name = "code", required = false) String code){
     if(StringUtils.isNotEmpty(code)){
       return credentialRepository.findByHashcode(code);

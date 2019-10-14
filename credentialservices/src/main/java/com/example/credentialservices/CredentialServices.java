@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class CredentialServiceApplication {
+public class CredentialServices {
 
 	@Bean
 	public Docket api() {
@@ -25,7 +25,7 @@ public class CredentialServiceApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(CredentialServiceApplication.class, args);
+		SpringApplication.run(CredentialServices.class, args);
 	}
 
 }
