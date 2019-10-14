@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>credentialservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>credentialservices</name>
 	<description>Credential Service for Core Banking App</description>
 
 	<properties>
