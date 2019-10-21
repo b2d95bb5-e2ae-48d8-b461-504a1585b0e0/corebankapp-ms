@@ -19,6 +19,35 @@
       "mainClass": "com.example.credentialservices.CredentialServices",
       "projectName": "credentialservices",
       "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-EurekaServerApplication<eurekaserver>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.example.eurekaserver.EurekaServerApplication",
+      "projectName": "eurekaserver",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-AccountingServices<accountingservices>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.example.accountingservices.AccountingServices",
+      "projectName": "accountingservices",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-MavenWrapperDownloader",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "MavenWrapperDownloader",
+      "args": ""
     }
   ]
 }

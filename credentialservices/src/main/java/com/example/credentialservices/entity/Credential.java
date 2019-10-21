@@ -1,17 +1,13 @@
 package com.example.credentialservices.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.example.credentialservices.domain.Client;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -37,15 +33,13 @@ public class Credential {
   private int hashcode;
   private int status;
 
-  // @JsonBackReference(value = "client_credential")
-  // @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-  // @JoinColumn(name = "client_id")
-  private String client;
+  @Column(name = "CLIENT_ID")
+  private Long clientId;
 
   public Credential() { }
 
-  public Credential(String client, String username, String password, String mail) {
-    this.client = client;
+  public Credential(Long clientId, String username, String password, String mail) {
+    this.clientId = clientId;
     this.username = username;
     this.password = password;
     this.mail = mail;
@@ -63,8 +57,8 @@ public class Credential {
   }
 
   @JsonIgnore
-  public String getClient() {
-    return client;
+  public Long getClient() {
+    return clientId;
   }
 
 
