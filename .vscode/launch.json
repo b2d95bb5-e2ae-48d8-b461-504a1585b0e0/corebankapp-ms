@@ -42,6 +42,16 @@
     },
     {
       "type": "java",
+      "name": "Spring Boot-ClientServices<clientservices>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.example.clientservices.ClientServices",
+      "projectName": "clientservices",
+      "args": ""
+    },
+    {
+      "type": "java",
       "name": "Spring Boot-MavenWrapperDownloader",
       "request": "launch",
       "cwd": "${workspaceFolder}",
