@@ -6,9 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Data;
 
-@Data
+
 @Entity
 public class Client {
 
@@ -23,5 +22,46 @@ public class Client {
   private String lastName;
   @Column(name = "HASHCODE")
   private String hashcode;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(String clientId) {
+    this.clientId = clientId;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getHashcode() {
+    return hashcode;
+  }
+
+  public void setHashcode(String hashcode) {
+    this.hashcode = hashcode;
+  }
+  
   
 }

@@ -9,6 +9,7 @@ import com.example.credentialservices.entity.Credential;
 import com.example.credentialservices.repository.CredentialRepository;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
 
 //import com.nexmo.client.NexmoClientException;
 //import com.nexmo.client.sms.SmsSubmissionResponse;
@@ -23,9 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @CrossOrigin("*")
 @RestController
 @Api(value = "Authorization", description = "Auth service operations on Clients", tags = ("Auth"))
@@ -33,6 +32,8 @@ public class CredentialController {
 
   @Autowired
   private CredentialRepository credentialRepository;
+  @Autowired
+  private Logger logger;
 
   @RequestMapping(path = "/login/user", method = RequestMethod.POST)
   @ApiOperation(value = "Authenticate user", notes = "Authenticate username and password on sign in", nickname = "validateUser")
@@ -44,7 +45,7 @@ public class CredentialController {
     Credential credential = optional.get();
 
     if (c.getPassword().equals(credential.getPassword())) {
-      log.info("Credentials are correct");
+      logger.info("Credentials are correct");
 
       // Generate HashCode from username, password and date:
       Date date = new Date(System.currentTimeMillis());
@@ -64,7 +65,7 @@ public class CredentialController {
 
       return returnedCredential;
     } else {
-      log.info("Username and Password are not correct");
+      logger.info("Username and Password are not correct");
       return null;
     }
   }
@@ -132,7 +133,7 @@ public class CredentialController {
   // @ResponseStatus(HttpStatus.NOT_FOUND)
   // @ExceptionHandler(NotFoundException.class)
   // public void handleNotFound(Exception e) {
-  //   log.info("Not found exception, " + e.getMessage());
+  //   logger.info("Not found exception, " + e.getMessage());
   // }
 
   
