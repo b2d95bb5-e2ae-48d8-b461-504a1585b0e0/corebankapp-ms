@@ -10,6 +10,7 @@ import com.example.credentialservices.repository.CredentialRepository;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //import com.nexmo.client.NexmoClientException;
 //import com.nexmo.client.sms.SmsSubmissionResponse;
@@ -32,8 +33,7 @@ public class CredentialController {
 
   @Autowired
   private CredentialRepository credentialRepository;
-  @Autowired
-  private Logger logger;
+  private final static Logger logger = LoggerFactory.getLogger("CredentialController.class");
 
   @RequestMapping(path = "/login/user", method = RequestMethod.POST)
   @ApiOperation(value = "Authenticate user", notes = "Authenticate username and password on sign in", nickname = "validateUser")
